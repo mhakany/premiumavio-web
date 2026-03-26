@@ -52,7 +52,7 @@
             text-decoration: none;
             color: var(--dark-grey);
             font-weight: 700;
-            font-size: 18px; /* Menü yazı boyutu hafif büyütüldü */
+            font-size: 18px; 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
@@ -72,7 +72,6 @@
             margin-top: 180px;
         }
 
-        /* Hero Başlığı 3rem'den 3.8rem'e büyütüldü */
         .hero h1 { font-size: 3.8rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; }
         .hero p { font-size: 1.2rem; }
 
@@ -94,7 +93,6 @@
         section { padding: 120px 8%; }
         .section-title { text-align: center; margin-bottom: 70px; }
         
-        /* Bölüm Başlıkları 2.2rem'den 2.8rem'e büyütüldü */
         .section-title h2 { font-size: 2.8rem; text-transform: uppercase; position: relative; padding-bottom: 20px; }
         .section-title h2::after {
             content: ''; width: 60px; height: 4px; background: var(--gold);
@@ -122,7 +120,6 @@
         .service-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
         .service-card i { font-size: 40px; color: var(--gold); margin-bottom: 30px; }
         
-        /* Kart Başlıkları 1.3rem'den 1.6rem'e büyütüldü */
         .service-card h3 { font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 8px; width: fit-content; }
         
         .service-list { list-style: none; }
@@ -132,7 +129,6 @@
         .military-section { background-color: var(--dark-grey); color: var(--white); }
         .military-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         
-        /* Alt Bölüm Başlıkları Büyütüldü */
         .military-content h2 { font-size: 3rem; margin-bottom: 15px; }
         .military-content h3 { color: var(--gold); font-size: 2rem; margin-bottom: 35px; }
         
@@ -163,12 +159,28 @@
             object-fit: contain;
         }
 
+        /* --- MOBİL DÜZELTMELER --- */
         @media (max-width: 992px) {
-            .military-grid { grid-template-columns: 1fr; }
+            nav { 
+                min-height: 160px; /* Üst menü barı yüksekliği mobil için ayarlandı */
+                justify-content: center; /* Logoyu yatayda ortalamak için */
+                padding: 15px; /* Yan paddingler azaltıldı */
+            }
+            .logo-container {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .logo-container img { 
+                height: auto; /* Yüksekliği otomatiğe alıp genişliği kontrol edeceğiz */
+                width: 70%; /* Logo genişliği oransal olarak büyütüldü (talebe uygun) */
+                max-width: 350px; /* Çok aşırı büyümesini engellemek için tavan genişlik */
+                margin: 0 auto; /* Tam yatay ortalama garanti */
+            }
+            .hero { margin-top: 160px; } /* Hero bölümünün tepe boşluğu güncellendi */
+            
             nav ul { display: none; }
-            nav { min-height: 120px; }
-            .logo-container img { height: 120px; }
-            .hero { margin-top: 120px; }
+            .military-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.8rem; }
             .services-grid { flex-direction: column; align-items: center; }
             .service-card { width: 100%; max-width: 500px; }
