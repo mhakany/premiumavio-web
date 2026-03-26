@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PremiumAvio | Aviation Consultancy & Brokerage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #B59A5D;
+            --dark-grey: #2D2E2E;
+            --white: #ffffff;
+            --light-grey-text: #eee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            min-height: 180px;
+        }
+
+        .logo-container img {
+            height: 180px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 35px; }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 700;
+            font-size: 18px; /* Menü yazı boyutu hafif büyütüldü */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--gold); }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.6)), 
+                        url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80&w=1920') no-repeat center 25%/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 15%;
+            margin-top: 180px;
+        }
+
+        /* Hero Başlığı 3rem'den 3.8rem'e büyütüldü */
+        .hero h1 { font-size: 3.8rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; }
+
+        .btn {
+            background-color: var(--gold);
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: 0.3s;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover { background-color: #9a824b; }
+
+        section { padding: 120px 8%; }
+        .section-title { text-align: center; margin-bottom: 70px; }
+        
+        /* Bölüm Başlıkları 2.2rem'den 2.8rem'e büyütüldü */
+        .section-title h2 { font-size: 2.8rem; text-transform: uppercase; position: relative; padding-bottom: 20px; }
+        .section-title h2::after {
+            content: ''; width: 60px; height: 4px; background: var(--gold);
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+        }
+
+        .services-grid { 
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap; 
+        }
+        .service-card { 
+            flex: 1;
+            min-width: 320px; 
+            max-width: 420px;
+            padding: 50px 35px; 
+            background: #fff; 
+            border: 1px solid #eee; 
+            text-align: left; 
+            transition: 0.3s; 
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .service-card i { font-size: 40px; color: var(--gold); margin-bottom: 30px; }
+        
+        /* Kart Başlıkları 1.3rem'den 1.6rem'e büyütüldü */
+        .service-card h3 { font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 8px; width: fit-content; }
+        
+        .service-list { list-style: none; }
+        .service-list li { margin-bottom: 15px; font-weight: 500; font-size: 1.05rem; color: #555; display: flex; align-items: flex-start; }
+        .service-list li::before { content: '•'; color: var(--gold); font-weight: bold; margin-right: 12px; margin-top: 2px; }
+
+        .military-section { background-color: var(--dark-grey); color: var(--white); }
+        .military-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        
+        /* Alt Bölüm Başlıkları Büyütüldü */
+        .military-content h2 { font-size: 3rem; margin-bottom: 15px; }
+        .military-content h3 { color: var(--gold); font-size: 2rem; margin-bottom: 35px; }
+        
+        .military-list { list-style: none; }
+        .military-list li { margin-bottom: 25px; display: flex; align-items: center; font-size: 1.2rem; }
+        .military-list li i { color: var(--gold); margin-right: 18px; font-size: 1.5rem; }
+
+        .military-image-container { display: flex; flex-direction: column; gap: 20px; }
+        .military-image-container img { 
+            width: 100%; 
+            border-radius: 4px; 
+            border: 1px solid var(--gold); 
+            object-fit: cover;
+            height: 280px;
+        }
+
+        footer { 
+            background: #000; 
+            color: var(--light-grey-text);
+            padding: 100px 10% 50px; 
+            text-align: center; 
+        }
+
+        .footer-logo img { 
+            height: 180px; 
+            width: auto; 
+            margin-bottom: 30px; 
+            object-fit: contain;
+        }
+
+        @media (max-width: 992px) {
+            .military-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            nav { min-height: 120px; }
+            .logo-container img { height: 120px; }
+            .hero { margin-top: 120px; }
+            .hero h1 { font-size: 2.8rem; }
+            .services-grid { flex-direction: column; align-items: center; }
+            .service-card { width: 100%; max-width: 500px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="PremiumAvio Logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#special-missions">Special Missions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Elevating Your Journey</h1>
+        <p>Expert Aviation Consultancy & Brokerage services. Delivering the "High Standard" Air Transportation.</p>
+        <a href="#contact" class="btn" style="margin-top:25px;">Inquire Now</a>
+    </section>
+
+    <section id="services">
+        <div class="section-title"><h2>Our Services</h2></div>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <i class="fas fa-plane"></i>
+                <h3>Aircraft Charter</h3>
+                <ul class="service-list">
+                    <li>Passenger Air Charter</li>
+                    <li>Cargo Air Charter</li>
+                    <li>Private Charter</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-file-contract"></i>
+                <h3>Aircraft Lease</h3>
+                <ul class="service-list">
+                    <li>Wet Leasing</li>
+                    <li>Damp Leasing</li>
+                    <li>Dry Leasing</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Consultancy</h3>
+                <ul class="service-list">
+                    <li>Airline Set-Up & Business Plan</li>
+                    <li>Revenue Management & Fleet Planning</li>
+                    <li>Aircraft Purchase & Lease</li>
+                    <li>Airline Sales Optimization & Channel Expansion</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="military-section" id="special-missions">
+        <div class="military-grid">
+            <div class="military-content">
+                <h2>Strategic Support</h2>
+                <h3>Defense Logistics</h3>
+                <ul class="military-list">
+                    <li><i class="fas fa-shield-alt"></i> Troop Transport</li>
+                    <li><i class="fas fa-truck-loading"></i> Tactical Cargo</li>
+                    <li><i class="fas fa-clock"></i> 24/7 Support</li>
+                </ul>
+            </div>
+            <div class="military-image-container">
+                <img src="troop_transport.png" alt="Troop Transport">
+                <img src="tactical_cargo.png" alt="Tactical Cargo">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-logo">
+            <img src="logoblack.png" alt="PremiumAvio Logo">
+        </div>
+        <p style="font-size: 1.1rem;">hakanyilmaz@premiumavio.com | Ankara- London - Istanbul - Dubai</p>
+        <div style="margin-top:40px; font-size:12px;">&copy; 2026 PremiumAvio. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
