@@ -24,35 +24,48 @@
             scroll-behavior: smooth;
         }
 
+        /* Navigasyon Düzenlemesi: Logo ve Menü Alt Alta ve Ortalı */
         nav {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 15px 8%;
+            padding: 20px 0;
             background: var(--white);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            min-height: 180px;
+        }
+
+        .logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
         }
 
         .logo-container img {
-            height: 180px;
+            height: 140px; /* Logo boyutu optimize edildi */
             width: auto;
             display: block;
             object-fit: contain;
         }
 
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 35px; }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            justify-content: center;
+            padding: 0;
+        }
+        
+        nav ul li { margin: 0 20px; }
         
         nav ul li a {
             text-decoration: none;
             color: var(--dark-grey);
             font-weight: 700;
-            font-size: 18px; 
+            font-size: 16px; 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
@@ -69,7 +82,7 @@
             align-items: center;
             text-align: center;
             padding: 0 12%;
-            margin-top: 100px;
+            margin-top: 220px; /* Navigasyon yüksekliğine göre ayarlandı */
         }
 
         .hero h1 { 
@@ -134,7 +147,6 @@
         .service-list li { margin-bottom: 15px; font-weight: 500; font-size: 1.05rem; color: #555; display: flex; align-items: flex-start; }
         .service-list li::before { content: '•'; color: var(--gold); font-weight: bold; margin-right: 12px; margin-top: 2px; }
 
-        /* Special Mission Bölümü Düzenlemesi */
         .military-section { background-color: var(--dark-grey); color: var(--white); padding: 80px 8%; }
         .military-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; }
         
@@ -162,7 +174,7 @@
         }
 
         .footer-logo img { 
-            height: 180px; 
+            height: 140px; 
             width: auto; 
             margin-bottom: 30px; 
             object-fit: contain;
@@ -174,15 +186,13 @@
         }
 
         @media (max-width: 992px) {
-            nav { min-height: 160px; justify-content: center; padding: 15px; }
-            .logo-container img { width: 70%; max-width: 350px; }
-            .hero { margin-top: 160px; padding: 0 8%; } 
-            nav ul { display: none; }
+            .logo-container img { height: 100px; }
+            .hero { margin-top: 180px; } 
+            nav ul { display: none; } /* Mobil menü gizlendi */
             .military-grid { grid-template-columns: 1fr; text-align: center; }
             .military-image-container { justify-content: center; }
             .hero h1 { font-size: 1.8rem; } 
-            .services-grid { flex-direction: column; align-items: center; }
-            .service-card { width: 100%; max-width: 500px; }
+            .service-card { width: 100%; }
         }
     </style>
 </head>
@@ -190,7 +200,7 @@
 
     <nav>
         <div class="logo-container">
-            <img src="logo.png" alt="PremiumAvio Logo">
+            <img src="LOGO.jpeg" alt="PremiumAvio Logo">
         </div>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -258,7 +268,7 @@
 
     <footer id="contact">
         <div class="footer-logo">
-            <img src="logoblack.png" alt="PremiumAvio Logo">
+            <img src="LOGO.jpeg" alt="PremiumAvio Logo">
         </div>
         <div class="footer-info">
             <p>info@premiumavio.com</p>
