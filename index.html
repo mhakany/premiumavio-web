@@ -24,7 +24,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigasyon: Hem masaüstü hem mobilde ortalı yapı */
+        /* Navigation */
         nav {
             display: flex;
             flex-direction: column; 
@@ -41,12 +41,12 @@
         .logo-container {
             width: 100%;
             display: flex;
-            justify-content: center; /* Logoyu yatayda tam ortalar */
+            justify-content: center;
             margin-bottom: 15px;
         }
 
         .logo-container img {
-            height: 160px; /* Logo boyutu büyütüldü */
+            height: 160px;
             width: auto;
             display: block;
             object-fit: contain;
@@ -65,7 +65,7 @@
             text-decoration: none;
             color: var(--dark-grey);
             font-weight: 700;
-            font-size: 16px; 
+            font-size: 14px; 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
@@ -82,7 +82,7 @@
             align-items: center;
             text-align: center;
             padding: 0 12%;
-            margin-top: 240px; /* Logonun büyümesine göre içerik aşağı kaydırıldı */
+            margin-top: 240px;
         }
 
         .hero h1 { 
@@ -104,7 +104,7 @@
             display: inline-block;
         }
 
-        /* Servisler ve Diğer Bölümler */
+        /* Sections */
         section { padding: 100px 8%; }
         .section-title { text-align: center; margin-bottom: 70px; }
         .section-title h2 { font-size: 2.8rem; text-transform: uppercase; position: relative; padding-bottom: 20px; }
@@ -114,22 +114,24 @@
         }
 
         .services-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-        .service-card { flex: 1; min-width: 320px; max-width: 420px; padding: 50px 35px; background: #fff; border: 1px solid #eee; transition: 0.3s; }
+        .service-card { flex: 1; min-width: 320px; max-width: 420px; padding: 50px 35px; background: #fff; border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; }
         .service-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
         .service-card i { font-size: 40px; color: var(--gold); margin-bottom: 30px; }
         .service-card h3 { font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; border-bottom: 2px solid var(--gold); padding-bottom: 8px; width: fit-content; }
 
         .service-list { list-style: none; }
-        .service-list li { margin-bottom: 15px; font-weight: 500; color: #555; display: flex; align-items: flex-start; }
-        .service-list li::before { content: '•'; color: var(--gold); margin-right: 12px; }
+        .service-list li { margin-bottom: 20px; font-size: 0.95rem; color: #555; }
+        .service-list li strong { color: var(--dark-grey); display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; }
+        .service-list li span { display: block; line-height: 1.4; padding-left: 15px; border-left: 2px solid #f0f0f0; }
 
         .military-section { background-color: var(--dark-grey); color: var(--white); padding: 80px 8%; }
         .military-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; }
         .military-content h2 { font-size: 2.5rem; }
         .military-content h3 { color: var(--gold); font-size: 1.8rem; margin-bottom: 30px; }
         .military-list { list-style: none; }
-        .military-list li { margin-bottom: 20px; font-size: 1.1rem; }
+        .military-list li { margin-bottom: 20px; font-size: 1.1rem; line-height: 1.4; }
         .military-list li i { color: var(--gold); margin-right: 15px; }
+        .military-list small { display: block; margin-left: 32px; font-size: 0.9rem; opacity: 0.8; margin-top: 5px; }
 
         .military-image-container img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--gold); }
 
@@ -137,11 +139,10 @@
         .footer-logo img { height: 160px; width: auto; margin-bottom: 30px; object-fit: contain; }
         .footer-info { font-size: 1.1rem; line-height: 1.8; }
 
-        /* Mobil Ayarlar */
         @media (max-width: 992px) {
-            .logo-container img { height: 130px; } /* Mobilde de büyük ve ortalı */
+            .logo-container img { height: 130px; }
             .hero { margin-top: 200px; }
-            nav ul { display: none; } /* Sade görünüm için mobilde menü gizli */
+            nav ul { display: none; }
             .military-grid { grid-template-columns: 1fr; text-align: center; }
             .hero h1 { font-size: 1.8rem; }
         }
@@ -173,28 +174,60 @@
                 <i class="fas fa-plane"></i>
                 <h3>Aircraft Charter</h3>
                 <ul class="service-list">
-                    <li>Passenger Air Charter</li>
-                    <li>Cargo Air Charter</li>
-                    <li>Private Charter</li>
+                    <li>
+                        <strong>Passenger Air Charter</strong>
+                        <span>Utilizing our extensive global network and our highly experienced team members, we provide seamless transport for large groups, ensuring strategic efficiency.</span>
+                    </li>
+                    <li>
+                        <strong>Cargo Air Charter</strong>
+                        <span>From urgent logistics to heavy-lift equipment, our global reach and our dedicated team members ensure your time-sensitive shipments reach any destination worldwide.</span>
+                    </li>
+                    <li>
+                        <strong>Private Charter</strong>
+                        <span>Boutique jet solutions for business professionals, offering high privacy and flexible schedules supported by the deep industrial knowledge of our team members.</span>
+                    </li>
                 </ul>
             </div>
+
             <div class="service-card">
                 <i class="fas fa-file-contract"></i>
                 <h3>Aircraft Lease</h3>
                 <ul class="service-list">
-                    <li>Wet Leasing</li>
-                    <li>Damp Leasing</li>
-                    <li>Dry Leasing</li>
+                    <li>
+                        <strong>Wet Leasing</strong>
+                        <span>Full operational support for airlines through our global network, ensuring uninterrupted service with flexible contracts managed by our team members.</span>
+                    </li>
+                    <li>
+                        <strong>Damp Leasing</strong>
+                        <span>Optimized solutions for operators who prefer using their own cabin crew while requiring aircraft and technical expertise from our team members.</span>
+                    </li>
+                    <li>
+                        <strong>Dry Leasing</strong>
+                        <span>Strategic asset management for long-term fleet planning, delivering high-performance aircraft while our team members provide necessary strategic support.</span>
+                    </li>
                 </ul>
             </div>
+
             <div class="service-card">
                 <i class="fas fa-briefcase"></i>
                 <h3>Consultancy</h3>
                 <ul class="service-list">
-                    <li>Airline Set-Up & Business Plan</li>
-                    <li>Revenue Management & Fleet Planning</li>
-                    <li>Aircraft Purchase & Lease</li>
-                    <li>Airline Sales Optimization & Channel Expansion</li>
+                    <li>
+                        <strong>Airline Set-Up & Business Plan</strong>
+                        <span>Our team members guide you through market analysis and regulatory compliance to build sustainable and profitable airline business models.</span>
+                    </li>
+                    <li>
+                        <strong>Revenue Management & Fleet Planning</strong>
+                        <span>Maximizing profitability through analytical support, backed by our team members' deep industrial insights and network expertise.</span>
+                    </li>
+                    <li>
+                        <strong>Aircraft Purchase & Lease</strong>
+                        <span>Professional guidance through every step of procurement, utilizing our vast network and the expertise of our team members for legal and technical advisory.</span>
+                    </li>
+                    <li>
+                        <strong>Airline Sales Optimization & Channel Expansion</strong>
+                        <span>Our team members analyze market dynamics to enhance your sales performance and broaden your global distribution reach through strategic channel expansion.</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -206,9 +239,18 @@
                 <h2>Strategic Support</h2>
                 <h3>Defense Logistics</h3>
                 <ul class="military-list">
-                    <li><i class="fas fa-shield-alt"></i> Troop Transport</li>
-                    <li><i class="fas fa-truck-loading"></i> Tactical Cargo</li>
-                    <li><i class="fas fa-clock"></i> 24/7 Support</li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i> <strong>Troop Transport</strong>
+                        <small>Coordinated by our experienced team members for secure and rapid global deployment.</small>
+                    </li>
+                    <li>
+                        <i class="fas fa-truck-loading"></i> <strong>Tactical Cargo</strong>
+                        <small>Utilizing our extensive network to deliver sensitive equipment to mission-critical locations.</small>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i> <strong>24/7 Expert Support</strong>
+                        <small>Our team members are available around the clock to provide global operational and logistics support.</small>
+                    </li>
                 </ul>
             </div>
             <div class="military-image-container">
@@ -224,7 +266,7 @@
         <div class="footer-info">
             <p>info@premiumavio.com</p>
             <p>hakanyilmaz@premiumavio.com</p>
-            <p style="margin-top: 10px;">Ankara - London - Istanbul - Dubai - Kiev</p>
+            <p style="margin-top: 10px;">Ankara - Istanbul - Dubai - Kiev</p>
         </div>
         <div style="margin-top:40px; font-size:12px;">&copy; 2026 PremiumAvio. All rights reserved.</div>
     </footer>
