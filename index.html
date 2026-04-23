@@ -47,7 +47,7 @@
         }
 
         .logo-container img {
-            height: 140px; /* Logo biraz optimize edildi */
+            height: 182px; /* Logo %30 büyütüldü (140px -> 182px) */
             width: auto;
             display: block;
             object-fit: contain;
@@ -73,9 +73,9 @@
         }
         nav ul li a:hover { color: var(--gold); }
 
-        /* HERO SECTION - BOYUT DÜZENLEMESİ YAPILAN KISIM */
+        /* HERO SECTION */
         .hero {
-            height: 65vh; /* Ekranın %100'ü yerine %65'ini kaplayarak uçağı makul boyuta çektik */
+            height: 65vh; 
             min-height: 450px;
             background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.6)), 
                         url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80&w=1920') no-repeat center 35%/cover;
@@ -85,7 +85,7 @@
             align-items: center;
             text-align: center;
             padding: 0 12%;
-            margin-top: 220px; /* Navigasyon boşluğu */
+            margin-top: 260px; /* Logo büyüdüğü için navigasyon boşluğu artırıldı */
         }
 
         .hero h1 { 
@@ -146,10 +146,10 @@
 
         /* MOBİL DÜZENLEMELER */
         @media (max-width: 992px) {
-            .logo-container img { height: 110px; }
+            .logo-container img { height: 143px; } /* Mobil logo %30 büyütüldü (110px -> 143px) */
             .hero { 
-                margin-top: 180px; 
-                height: 50vh; /* Mobilde daha dar bir şerit haline getirdik */
+                margin-top: 220px; /* Mobil navigasyon boşluğu artırıldı */
+                height: 50vh; 
                 min-height: 350px;
             }
             nav ul { display: none; }
